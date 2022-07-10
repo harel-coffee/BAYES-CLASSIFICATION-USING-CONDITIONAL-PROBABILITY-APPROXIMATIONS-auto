@@ -3,7 +3,6 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.model_selection import KFold
 from sklearn.naive_bayes import GaussianNB
-from sklearn.naive_bayes import MultinomialNB
 import time
 import matplotlib.pyplot as plt
 import math
@@ -22,8 +21,6 @@ import random
 import time
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.model_selection import GridSearchCV
-from sklearn.metrics import confusion_matrix
-
 from sklearn.base import BaseEstimator, ClassifierMixin, TransformerMixin
 from sklearn.utils.validation import check_X_y, check_array, check_is_fitted
 from sklearn.utils.multiclass import unique_labels
@@ -259,6 +256,8 @@ def feature_selection(model,X,y,kf,num_CV,acc,removed_col):
 
     return (max(highest_score[0],highest_score[1]),cols,state,removed_col)
 
+
+
 def naive_bayes_analysis(data_file,result_summary={},final_features=[0],kappa=1):
     
     #set up data collection 
@@ -272,7 +271,6 @@ def naive_bayes_analysis(data_file,result_summary={},final_features=[0],kappa=1)
     result_summary[data_file]["kNN_20"]=0
     result_summary[data_file]["MNB_optimal"]=0
     result_summary[data_file]["MNB_optimal_kappa"]=[]
-    
     result_summary[data_file]["MNB_20"] = 0
     result_summary[data_file]["MNB_60"] = 0
     result_summary[data_file]["MNB_time"]=0
@@ -350,7 +348,7 @@ def naive_bayes_analysis(data_file,result_summary={},final_features=[0],kappa=1)
         t.stop()
 
 #       
-        #approximated bayesian classification
+        # proposed approximated bayesian classification
 
 
         t.start()
@@ -379,9 +377,6 @@ def naive_bayes_analysis(data_file,result_summary={},final_features=[0],kappa=1)
         Z={}
         for label in labels:
             Z[label] = (y_train.values == label).sum()/y.shape[0]
-    #     print("Z {}".format(Z))
-
-
         for i,row in X_test.iterrows():
             row = row.tolist()
             class_sample_size = 0
