@@ -1,30 +1,44 @@
 # BAYES-CLASSIFICATION-USING-CONDITIONAL-PROBABILITY-APPROXIMATIONS
 
-Data prep
 
-1/ Upload data as .csv
+We have provided the datasets used for testing in the zip file named datasets.zip
+These datasets were acquired from the UCI Machine Learning Repository.
+https://archive.ics.uci.edu/ml/datasets.php
 
-
-2/ .csv files should not contain column names or row numbers
-
-
-3/ Data should be arranged X|Y. We assume the rightmost column is the target variable.
-
-
-i.e. feature columns (X) are listed in the .csv from left to right and the target column Y is to the right of this. 
+The citations to each dataset are listed below. 
 
 
 
-
-Insert the following information before running
-
-1/ LOCATION ='Location_of_datasets' row 461 
+experiments.py and experiments.ipynb are the same and was used to produce the results in the paper results. 
+We have provided experiments.ipynb and the datasets for convenience in reproducing our resutls. 
 
 
-2/ FILE = 'file_name' row 462 
+To use experiments.ipynb
 
 
-3/ final_features = "string_list_of_features' eg. ['0','1','5'] row 469
+1/ Download datasets.zip and extract
 
 
-4/ kappa = INT row 471
+2/ Set the location of the folder in line 461
+LOCATION ='./datasets' 
+
+
+3/ Select the you want to run in line 462
+FILE = 'file_name' 
+
+
+4/ Experiments.ipynb allows you to select the features to be evaluated, this can be done in line 469
+final_features = "string_list_of_features' eg. ['0','1','5']
+
+
+5/ Finally youcan set the parameter kappa for the model in line 471
+kappa = INT eg. 42
+
+
+The files proposed_bayesian_classifier_cpu.py and proposed_bayesian_classifier_gpu.py are cpu and gpu implenetations of the proposed classifier respectively.
+
+When using proposed_bayesian_classifier_cpu.py or proposed_bayesian_classifier_gpu.py
+The implementation resembles that of scikit-learn methods. 
+
+PC = ProposedClassifier(kappa)
+y_PC_pred = PC.fit(X_train, y_train).predict(X_test)
