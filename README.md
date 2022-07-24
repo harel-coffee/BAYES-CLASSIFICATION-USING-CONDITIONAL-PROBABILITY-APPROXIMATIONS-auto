@@ -5,8 +5,6 @@ We have provided the datasets used for testing in the zip file named datasets.zi
 These datasets were acquired from the UCI Machine Learning Repository.
 https://archive.ics.uci.edu/ml/datasets.php
 
-The citations to each dataset are listed below. 
-
 
 
 experiments.py and experiments.ipynb are the same and was used to produce the results in the paper results. 
@@ -31,8 +29,8 @@ FILE = 'file_name'
 final_features = "string_list_of_features' eg. ['0','1','5']
 
 
-5/ Finally youcan set the parameter kappa for the model in line 471
-kappa = INT eg. 42
+5/ Finally you can set the parameter kappa for the model in line 471
+kappa = int eg. 42
 
 
 The files proposed_bayesian_classifier_cpu.py and proposed_bayesian_classifier_gpu.py are stand-alone cpu and gpu implenetations of the proposed classifier respectively.
