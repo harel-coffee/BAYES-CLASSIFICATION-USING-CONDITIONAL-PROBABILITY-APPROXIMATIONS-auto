@@ -22,14 +22,17 @@ LOCATION ='./datasets'
 
 
 3/ Select the you want to run in line 462
+
 FILE = 'file_name' 
 
 
 4/ Experiments.ipynb allows you to select the features to be evaluated, this can be done in line 469
+
 final_features = "string_list_of_features' eg. ['0','1','5']
 
 
-5/ Finally you can set the parameter kappa for the model in line 471
+5/ Finally you can set the parameter, kappa for the model in line 471
+
 kappa = int eg. 42
 
 
