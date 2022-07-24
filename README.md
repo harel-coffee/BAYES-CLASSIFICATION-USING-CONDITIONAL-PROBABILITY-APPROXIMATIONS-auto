@@ -35,10 +35,10 @@ final_features = "string_list_of_features' eg. ['0','1','5']
 kappa = INT eg. 42
 
 
-The files proposed_bayesian_classifier_cpu.py and proposed_bayesian_classifier_gpu.py are cpu and gpu implenetations of the proposed classifier respectively.
+The files proposed_bayesian_classifier_cpu.py and proposed_bayesian_classifier_gpu.py are stand-alone cpu and gpu implenetations of the proposed classifier respectively.
 
-When using proposed_bayesian_classifier_cpu.py or proposed_bayesian_classifier_gpu.py
-The implementation resembles that of scikit-learn methods. 
+When using proposed_bayesian_classifier_cpu.py or proposed_bayesian_classifier_gpu.py, the implementation resembles that of scikit-learn methods. 
 
 PC = ProposedClassifier(kappa)
+
 y_PC_pred = PC.fit(X_train, y_train).predict(X_test)
